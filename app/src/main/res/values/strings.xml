@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">ITBookShop</string>
+    <string name="book_cover_description">Book cover</string>
+    <string name="error_message">An error has occurred!</string>
+    <string name="explore_new_books">New</string>
+    <string name="search_for_books">Search</string>
+    <string name="logout">Logout</string>
+    <string name="explore_book_details">Details</string>
+    <string name="explore_favorite_books">Favorites</string>
+
+    <string name="login_user_email">loginUserEmail</string>
+    <string name="book_details_isbn13">bookDetailsIsbn13</string>
+
+    <string name="books_action_type">Books_Action_Type</string>
+    <string name="books_scroll_x">Books_Scroll_X</string>
+    <string name="books_scroll_y">Books_Scroll_Y</string>
+    <string name="books_search_query">Books_Search_Query</string>
+
+    <string name="mobile_ads_app_id">ca-app-pub-4613872064552051~1886495220</string>
+
+    <string name="detail_book_authors_label">Author(s):</string>
+    <string name="detail_book_pages_label">Pages:</string>
+    <string name="detail_book_language_label">Language:</string>
+    <string name="detail_book_price_label">Price:</string>
+    <string name="detail_book_published_year_label">Published year:</string>
+    <string name="detail_book_description_label">Description:</string>
+    <string name="detail_book_open_in_website_button_label">Open in website</string>
+    <string name="appwidget_text">IT Books</string>
+    <string name="appwidget_text_favorite_books">Your favorite book(s) are</string>
+    <string name="add_widget">Add widget</string>
+</resources>
