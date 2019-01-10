@@ -5,12 +5,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".BookDetailsActivity">
-
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/book_details_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
     <LinearLayout
         android:id="@+id/book_details"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_marginTop="?attr/actionBarSize">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -45,8 +53,7 @@
                     <TextView
                         android:id="@+id/detail_book_authors_value"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="me and you"/>
+                        android:layout_height="wrap_content" />
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -63,8 +70,7 @@
                     <TextView
                         android:id="@+id/detail_book_price_value"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="me and you"/>
+                        android:layout_height="wrap_content" />
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -81,8 +87,7 @@
                     <TextView
                         android:id="@+id/detail_book_language_value"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="me and you"/>
+                        android:layout_height="wrap_content" />
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -99,8 +104,7 @@
                     <TextView
                         android:id="@+id/detail_book_pages_value"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="me and you"/>
+                        android:layout_height="wrap_content" />
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -116,8 +120,7 @@
                     <TextView
                         android:id="@+id/detail_book_published_year_value"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="me and you"/>
+                        android:layout_height="wrap_content" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -129,7 +132,8 @@
             android:layout_gravity="end"
             android:layout_marginRight="8dp"
             android:layout_marginEnd="8dp"
-            android:background="#00ffffff" />
+            android:background="#00ffffff"
+            android:contentDescription="@string/favorite_button" />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -151,7 +155,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textStyle="bold"
-            android:text="@string/detail_book_open_in_website_button_label"/>
+            android:text="@string/detail_book_open_in_website_button_label"
+            android:contentDescription="@string/open_in_web_button" />
     </LinearLayout>
 
     <TextView

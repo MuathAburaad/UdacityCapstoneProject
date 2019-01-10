@@ -28,4 +28,9 @@
     <string name="appwidget_text">IT Books</string>
     <string name="appwidget_text_favorite_books">Your favorite book(s) are</string>
     <string name="add_widget">Add widget</string>
+
+    <string name="advertisement_widget">Advertisement widget</string>
+    <string name="sign_in_button">Sign in button</string>
+    <string name="favorite_button">Set this book as favorite</string>
+    <string name="open_in_web_button">Open website page of this book</string>
 </resources>

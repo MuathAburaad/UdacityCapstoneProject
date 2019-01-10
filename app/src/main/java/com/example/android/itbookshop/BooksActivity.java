@@ -1,5 +1,6 @@
 package com.example.android.itbookshop;
 
+import android.app.ActivityOptions;
 import android.appwidget.AppWidgetManager;
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
@@ -13,6 +14,7 @@ import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -63,6 +65,8 @@ public class BooksActivity extends AppCompatActivity implements BooksAdapter.Boo
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_books);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.books_toolbar);
+        setSupportActionBar(toolbar);
 
         MobileAds.initialize(this, getString(R.string.mobile_ads_app_id));
         mAdView = findViewById(R.id.adView);
@@ -208,7 +212,15 @@ public class BooksActivity extends AppCompatActivity implements BooksAdapter.Boo
         Intent intent = new Intent(this, BookDetailsActivity.class);
         intent.putExtra(getString(R.string.book_details_isbn13), book.getIsbn13());
         intent.putExtra(getString(R.string.login_user_email), userEmail);
-        startActivity(intent);
+
+        Bundle bundle = null;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+            bundle = ActivityOptions.makeSceneTransitionAnimation(this).toBundle();
+            startActivity(intent, bundle);
+        }else{
+            startActivity(intent);
+        }
+
     }
 
     public class FetchBooksTask extends AsyncTask<String, Void, List<Book>> {
@@ -336,7 +348,13 @@ public class BooksActivity extends AppCompatActivity implements BooksAdapter.Boo
             @Override
             public Task<Object> then(@Nullable Void aVoid) throws Exception {
                 Intent intent = new Intent(BooksActivity.this, LoginActivity.class);
-                startActivity(intent);
+                Bundle bundle = null;
+                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+                    bundle = ActivityOptions.makeSceneTransitionAnimation(BooksActivity.this).toBundle();
+                    startActivity(intent, bundle);
+                }else{
+                    startActivity(intent);
+                }
                 finish();
                 return null;
             }

@@ -1,8 +1,10 @@
 package com.example.android.itbookshop;
 
 import android.app.Activity;
+import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
@@ -15,7 +17,7 @@ import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.Task;
 
-public class LoginActivity extends Activity implements View.OnClickListener {
+public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
     private GoogleSignInClient mGoogleSignInClient;
     private SignInButton mSignInButton;
     private static final int RC_SIGN_IN = 434;
@@ -85,7 +87,13 @@ public class LoginActivity extends Activity implements View.OnClickListener {
             Intent intent = new Intent(this, BooksActivity.class);
             String personEmail = googleSignInAccount.getEmail();
             intent.putExtra(getString(R.string.login_user_email), personEmail);
-            startActivity(intent);
+            Bundle bundle = null;
+            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+                bundle = ActivityOptions.makeSceneTransitionAnimation(this).toBundle();
+                startActivity(intent, bundle);
+            }else{
+                startActivity(intent);
+            }
             finish();
         }
     }
